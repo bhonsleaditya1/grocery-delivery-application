@@ -20,7 +20,6 @@ public class Order {
         paymentStatus = PaymentStatus.UNDEFINED;
     }
 
-
     public PaymentType getPaymentType(){
         return customer.getPaymentType();
     }

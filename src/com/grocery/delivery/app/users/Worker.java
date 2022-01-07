@@ -8,19 +8,19 @@ import com.grocery.delivery.app.store.Store;
 
 public class Worker extends Customer{
     Payment payment;
-    Status status;
+    WorkerStatus workerStatus;
 
     public Worker(String name, Store store){
         super(name, store);
-        status = Status.UNAVALIABLE;
+        workerStatus = WorkerStatus.UNAVALIABLE;
     }
 
-    public Status getStatus() {
-        return status;
+    public WorkerStatus getStatus() {
+        return workerStatus;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setStatus(WorkerStatus workerStatus) {
+        this.workerStatus = workerStatus;
     }
 
     public Payment getPaymentMethod(PaymentType paymentType){
@@ -50,13 +50,12 @@ public class Worker extends Customer{
             }
         }
         //generate bill
-        status = Status.AVAILABLE;
+        workerStatus = WorkerStatus.AVAILABLE;
         return null;
     }
 
     public void isFree(){
         store.addWorker(this);
     }
-
 
 }

@@ -3,12 +3,11 @@ package com.grocery.delivery.app.store;
 import com.grocery.delivery.app.deliveries.DeliveryType;
 import com.grocery.delivery.app.deliveries.Location;
 import com.grocery.delivery.app.deliveries.Trip;
-import com.grocery.delivery.app.deliveries.TripPlanning;
 import com.grocery.delivery.app.inventories.Inventory;
 import com.grocery.delivery.app.orders.Order;
 import com.grocery.delivery.app.users.Admin;
 import com.grocery.delivery.app.users.Customer;
-import com.grocery.delivery.app.users.Status;
+import com.grocery.delivery.app.users.WorkerStatus;
 import com.grocery.delivery.app.users.Worker;
 import com.grocery.delivery.app.work.Counter;
 import com.grocery.delivery.app.work.Delivery;
@@ -52,12 +51,12 @@ public class Store {
         if(workerList.isEmpty())
             throw new RuntimeException("No Workers Found");
         Worker worker = workerList.poll();
-        worker.setStatus(Status.BUSY);
+        worker.setStatus(WorkerStatus.BUSY);
         return worker;
     }
 
     public void addWorker(Worker worker){
-        worker.setStatus(Status.AVAILABLE);
+        worker.setStatus(WorkerStatus.AVAILABLE);
         workerList.add(worker);
         System.out.println("Worker: "+ worker+" added to list");
     }

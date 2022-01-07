@@ -1,6 +1,6 @@
 package com.grocery.delivery.app.users;
 
-public enum Status {
+public enum WorkerStatus {
     BUSY,
     UNAVALIABLE,
     AVAILABLE

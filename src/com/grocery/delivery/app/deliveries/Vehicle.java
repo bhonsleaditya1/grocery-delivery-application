@@ -12,7 +12,7 @@ public class Vehicle {
     Location currentLocation;
     List<Order> temp;
     Trip trip;
-    Timer timer;
+    final Timer timer;
     int limit;
     TripPlanning tripPlanning;
 
@@ -33,8 +33,7 @@ public class Vehicle {
         currentLocation = trip.next();
         if(currentLocation==null) {
             this.timer.cancel();
-            this.timer.purge();
-            this.timer = null;
+            //this.timer.purge();
             this.tripPlanning.runningVehicles.remove(this);
         }else {
             makeDelivery();

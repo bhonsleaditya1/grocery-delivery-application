@@ -10,7 +10,7 @@ public class Admin extends User{
         super(name, store);
     }
     public void addWorker(Worker worker){
-        worker.setStatus(Status.AVAILABLE);
+        worker.setStatus(WorkerStatus.AVAILABLE);
         store.addWorker(worker);
     }
 

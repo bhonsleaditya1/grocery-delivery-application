@@ -10,10 +10,8 @@ import java.util.List;
 
 public class Inventory {
     HashMap<String, Item> instances;
-    Integer instanceSerial;
     public Inventory(){
         instances = new HashMap<>();
-        instanceSerial=1;
     }
 
     public void addItemInstance(String itemName,ItemInstance instance){

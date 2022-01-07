@@ -22,6 +22,7 @@ public class TripPlanning {
     public void addTrip(Trip trip){
         this.trips.add(trip);
     }
+
     Vehicle getVehicle(){
         Vehicle vehicle = vehicleList.poll();
         if (vehicle==null){
@@ -30,6 +31,7 @@ public class TripPlanning {
         vehicleList.add(vehicle);
         return vehicle;
     }
+
     public void planTrip(){
         trip = trips.poll();
         if(trip!=null){
@@ -48,6 +50,7 @@ public class TripPlanning {
         orderList.add(order);
         orders.put(order.getDestination(), orderList);
     }
+
     public boolean isComplete(){
         return runningVehicles.isEmpty();
     }

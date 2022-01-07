@@ -7,7 +7,7 @@ import java.util.List;
 public class Item {
     String name;
     HashMap<String,ItemInstance> instances;
-    List<String> instanceId;
+    List<String> instanceIdList;
     Integer instanceSerial;
     ItemType type;
     public Item(String name,ItemType type){
@@ -15,12 +15,12 @@ public class Item {
         instanceSerial=1;
         this.name = name;
         this.type = type;
-        instanceId = new ArrayList<>();
+        instanceIdList = new ArrayList<>();
     }
 
     public void addItemInstance(ItemInstance instance){
         instances.put(instance.Id,instance);
-        instanceId.add(instance.Id);
+        instanceIdList.add(instance.Id);
     }
     public void createItemInstance(){
         String Id = name+instanceSerial++;
@@ -28,12 +28,12 @@ public class Item {
     }
 
     public ItemInstance getItemInstance(String Id){
-        instanceId.remove(Id);
+        instanceIdList.remove(Id);
         return instances.remove(Id);
     }
     public ItemInstance getItemInstance(){
-        if(!instanceId.isEmpty())
-            return getItemInstance(instanceId.get(0));
+        if(!instanceIdList.isEmpty())
+            return getItemInstance(instanceIdList.get(0));
         return null;
     }
     public void removeItemInstance(String Id){
@@ -44,7 +44,7 @@ public class Item {
     public String toString() {
         return "Item{" +
                 "name='" + name + '\'' +
-                ", instanceId=" + instanceId +
+                ", instanceId=" + instanceIdList +
                 '}';
     }
 }

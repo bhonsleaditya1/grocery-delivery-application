@@ -23,6 +23,7 @@ public class Customer extends User {
         deliveryType = DeliveryType.INSTORE;
         home = null;
     }
+
     public PaymentType getPaymentType() {
         return paymentType;
     }
@@ -42,7 +43,6 @@ public class Customer extends User {
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
     }
-
 
     public Cart generateCart() {
         for(String item: itemList.keySet()) {
